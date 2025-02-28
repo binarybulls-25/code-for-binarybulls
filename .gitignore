@@ -1,0 +1,6 @@
+venv/
+in_progress/
+
+*.csv
+
+.DS_Store
