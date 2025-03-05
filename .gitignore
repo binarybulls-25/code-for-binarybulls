@@ -4,3 +4,10 @@ in_progress/
 *.csv
 
 .DS_Store
+
+video_demo/
+video_animations/
+
+__pycache__
+
+*.html

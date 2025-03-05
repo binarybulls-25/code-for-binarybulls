@@ -125,6 +125,8 @@ def expirement_param():
 
 def main():
     filepath_5mins = "data/ESH5_5mins_data.csv"
+    os.makedirs(os.path.dirname(filepath_5mins), exist_ok=True)
+
     params = {"oversold": 30, "overbought": 70, "stop_loss": 10, "take_profit": 20,"timeframe":"5 mins"}
 
     if os.path.exists(filepath_5mins):
@@ -144,14 +146,14 @@ def main():
 
     df_3mins = prepare_ticks_data_backtesting(df_3mins)
 
-    #simple_results = run_rsisimple(df_5mins, params, plot_result=False)  # Test 5 mins
+    simple_results = run_rsisimple(df_5mins, params, plot_result=False)  # Test 5 mins
     #simple_results = run_rsisimple(df_3mins, params) # Test 3 mins
 
     # # simple_results = run_rsisimple(df_5mins, params)
 
-    #print("Simple RSI Results:", simple_results)
+    print("Simple RSI Results:", simple_results)
 
-    expirement_param()
+    #expirement_param()
 
 if __name__ == "__main__":
     main()
